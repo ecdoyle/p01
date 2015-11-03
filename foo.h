@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <strings.h>
 #include <iostream>
-
+using namespace std;
 
 enum STATE{ OFF=0, ON=1};
 
@@ -35,7 +35,7 @@ class Node{
 
  public:
   Node(){};
-  Lamp* data;
+  Lamp data;
   void setData(Lamp nextData);
   void setNext(Node* nextNode);
   Lamp Data();

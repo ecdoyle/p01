@@ -29,7 +29,7 @@ bool Lamp :: debug(FILE* fp) {
 const float Lamp::ac_power=60.0;
 
 void Node::setData(Lamp  nextData){
-  data=&nextData;
+  data=nextData;
 }
 
 void Node:: setNext(Node* nextNode){
@@ -37,7 +37,7 @@ void Node:: setNext(Node* nextNode){
 }
 
 Lamp Node:: Data(){
-  return *data;
+  return data;
 }
 Node* Node::Next(){
   return pnext;

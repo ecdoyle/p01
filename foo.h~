@@ -28,7 +28,7 @@ class Lamp {
 
 };
 
-const float Lamp::ac_power=60.0;
+//const float Lamp::ac_power=60.0;
 
 class Node{
   Node* pnext;
@@ -36,68 +36,17 @@ class Node{
  public:
   Node(){};
   Lamp* data;
-  void setData(Lamp nextData){data=& nextData;}; //set the next node's data
-  void setNext(Node* nextNode){pnext=nextNode;}; //set the next node
-  Lamp Data(){return *data;}; //print list data
-  Node* Next(){return pnext;}; //print next
+  void setData(Lamp nextData);
+  void setNext(Node* nextNode);
+  Lamp Data();
+  Node* Next();
 };
 
 class List{
   Node *head;
 
  public:
-  List(){head =NULL;};
+  List(){head=NULL;};
   void Print();
   void Append(Lamp data);
 };
-
-void List::Print(){
-
-  Node *tmp =head; //temporary pointer
-  /*  
-  //if there are no nodes 
-  if(tmp ==NULL){
-    std::cout << "EMPTY" << std::endl;
-    return;
-  }
-
-  //if only one node
-  if(tmp->Next() ==NULL) {
-    std::cout << tmp->Data();
-    std::cout << " -->";
-    std::cout << "NULL" << std::endl;
-  }
-  else{
-    //parse and print the list
-    do{
-      std::cout << tmp->Data();
-      std::cout << "-->";
-      tmp=tmp->Next();
-    }
-    while(tmp != NULL);
-    std::cout << "NULL" << std::endl;
-    }*/
-}
-
-
-void List::Append(Lamp data){
-  //create a new node
-  Node* newNode= new Node();
-  newNode->setData(data);
-  newNode->setNext(NULL);
-
-  //another temp node!!
-  Node *tmp = head;
-
-  if(tmp !=NULL){
-    while(tmp->Next() != NULL){
-      tmp=tmp->Next();
-    }
-
-    tmp->setNext(newNode);
-  }
-  else{ //then it is the first node in the list
-    head= newNode;
-  }
-}
-
