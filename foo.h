@@ -28,7 +28,7 @@ class Lamp {
 
 };
 
-const float Lamp::ac_power=60.0;
+//const float Lamp::ac_power=60.0;
 
 class Node{
   Node* pnext;
@@ -46,7 +46,7 @@ class List{
   Node *head;
 
  public:
-  List();
+  List(){head=NULL;};
   void Print();
   void Append(Lamp data);
 };

@@ -26,6 +26,8 @@ bool Lamp :: debug(FILE* fp) {
   return true;
 }
 
+const float Lamp::ac_power=60.0;
+
 void Node::setData(Lamp  nextData){
   data=&nextData;
 }
@@ -35,16 +37,16 @@ void Node:: setNext(Node* nextNode){
 }
 
 Lamp Node:: Data(){
-  return data;
+  return *data;
 }
 Node* Node::Next(){
   return pnext;
 }
 
 void List::Print(){
-
+  printf("printing!");
   Node *tmp=head;
- 
+  /*
  if(tmp ==NULL){  //if no contents in list
    std::cout<<"EMPTY"<<std::endl;
     return;
@@ -65,9 +67,10 @@ void List::Print(){
  while(tmp!=NULL);
  std::cout<<"NULL"<< std::endl;
 
-   }
-}
+ }
+  */ 
 
+}
 
 void List::Append(Lamp data){
 
