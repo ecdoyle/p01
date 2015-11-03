@@ -14,6 +14,7 @@ Lamp::~Lamp(){
 }
 
 bool Lamp :: set_brand(char* arg){
+  printf("setting the brand\n");
   brand= new char[100];
   strcpy(brand,arg);
   return true;
