@@ -24,7 +24,7 @@ foo.o: foo.cc foo.h
 foo_00.o: foo_00.cc foo.h
 #very similar to the section above, just pertains to the auxiliary function script
 
-	g++ -02 -c foo_00.cc -o foo_00.o
+	g++ -O2 -c foo_00.cc -o foo_00.o
 #this also uses the g++ C++ compiler version -O2 and denotes that the foo_00.cc file should be compuled and foo_00.o it to be used as the object code file
 
 # define a target to clean the directory

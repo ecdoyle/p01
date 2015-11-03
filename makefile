@@ -18,13 +18,13 @@ foo: foo.o foo_00.o
 foo.o: foo.cc foo.h
 #this section is used to define how this object code file is compiled in the application
 
-	g++ -O2 -c foo.cc -o foo.o
+	g++ -g -c foo.cc -o foo.o
 #again we use the g++ compiler, the -O2 refers to the version of g++ and it was mentioned that -O2 is the best one to use for our uses. the -c flag is used to compile just foo.cc, and uses the -o flag to name the object code file
 
 foo_00.o: foo_00.cc foo.h
 #very similar to the section above, just pertains to the auxiliary function script
 
-	g++ -O2 -c foo_00.cc -o foo_00.o
+	g++ -g -c foo_00.cc -o foo_00.o
 #this also uses the g++ C++ compiler version -O2 and denotes that the foo_00.cc file should be compuled and foo_00.o it to be used as the object code file
 
 # define a target to clean the directory

@@ -40,7 +40,6 @@ bool Lamp :: set_brand(char* arg){
 // stdout) and then return true  
 bool Lamp :: debug(FILE* fp) {
    fprintf(fp, "Brand: %s \n Length: %f \n Height: %f \n Width: %f \n Watts: %fn ", brand,length, height,width, watts);
-   printf("hey");
    return true;
 }
 
