@@ -17,6 +17,7 @@ bool Lamp :: set_brand(char* arg){
   printf("setting the brand\n");
   brand= new char[100];
   strcpy(brand,arg);
+  printf("str %s : brand %s \n", arg, brand);
   return true;
 }
 
@@ -74,13 +75,15 @@ void List::Print(){
 }
 
 void List::Append(Lamp data){
-
+  printf("appending \n");
   //make new node and set data
   Node* newNode= new Node();
   newNode-> setData(data);
+  //printf("set data \n");
   newNode-> setNext(NULL);
-
+  // printf("set next \n");
   Node *tmp=head;
+  printHead();
   if(tmp !=NULL) {
     while(tmp->Next() !=NULL) { //loop through to find end of list, as long as the next isn't null, then it isnt the end of the list
       tmp =tmp->Next();
@@ -89,5 +92,10 @@ void List::Append(Lamp data){
   }
   else{
     head=newNode; //need to initialize the head of the list if first
+    printf("head is newNode");
   }
+}
+
+void List::printHead(){
+cout<< head;
 }

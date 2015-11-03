@@ -47,6 +47,7 @@ class List{
 
  public:
   List(){head=NULL;};
+  void printHead();
   void Print();
   void Append(Lamp data);
 };
