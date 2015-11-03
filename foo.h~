@@ -35,10 +35,10 @@ class Node{
 
  public:
   Node(){};
-  int data;
-  void setData(Lamp* nextData){data= nextData;}; //set the next node's data
+  Lamp* data;
+  void setData(Lamp nextData){data=& nextData;}; //set the next node's data
   void setNext(Node* nextNode){pnext=nextNode;}; //set the next node
-  Lamp Data(){return data;}; //print list data
+  Lamp Data(){return *data;}; //print list data
   Node* Next(){return pnext;}; //print next
 };
 
@@ -48,13 +48,13 @@ class List{
  public:
   List(){head =NULL;};
   void Print();
-  void Append(int data);
+  void Append(Lamp data);
 };
 
 void List::Print(){
 
   Node *tmp =head; //temporary pointer
-  
+  /*  
   //if there are no nodes 
   if(tmp ==NULL){
     std::cout << "EMPTY" << std::endl;
@@ -70,17 +70,17 @@ void List::Print(){
   else{
     //parse and print the list
     do{
-      std::cout<< tmp->Data();
-      std::cout<< "-->";
+      std::cout << tmp->Data();
+      std::cout << "-->";
       tmp=tmp->Next();
     }
     while(tmp != NULL);
     std::cout << "NULL" << std::endl;
-  }
+    }*/
 }
 
 
-void List::Append(Lamp* data){
+void List::Append(Lamp data){
   //create a new node
   Node* newNode= new Node();
   newNode->setData(data);

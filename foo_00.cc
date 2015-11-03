@@ -1,7 +1,7 @@
 #include "foo.h"
 #include <string.h>
 
-Lamp::Lamp(float arg){
+Lamp::Lamp(){
   length=-1;
   height=-1;
   width=-1;
@@ -20,22 +20,25 @@ bool Lamp :: set_brand(char* arg){
 }
 
 bool Lamp :: debug(FILE* fp) {
-  fprintf(fp, "Brand: %s \n Length: %f \n Height: %f \n Width: %f \n Watts: %f  State: %d", Lamp.brand, Lamp.length, Lamp.height, Lamp.width, Lamp.watts, Lamp.state);
-  
+  /* fprintf(fp, "Brand: %s \n Length: %f \n Height: %f \n Width: %f \n Watts: %f  State: %d", Lamp.brand, Lamp.length, Lamp.height, Lamp.width, Lamp.watts, Lamp.state);
+   */
+  printf("print");
   return true;
 }
+
 void Node::setData(Lamp  nextData){
-  data=nextData;
+  data=&nextData;
 }
 
 void Node:: setNext(Node* nextNode){
-  next=nextNode;
+  pnext=nextNode;
 }
+
 Lamp Node:: Data(){
   return data;
 }
 Node* Node::Next(){
-  return next;
+  return pnext;
 }
 
 void List::Print(){
@@ -43,25 +46,30 @@ void List::Print(){
   Node *tmp=head;
  
  if(tmp ==NULL){  //if no contents in list
-    cout<<"EMPTY"<<endl;
+   std::cout<<"EMPTY"<<std::endl;
     return;
   }
  if(tmp->Next() ==NULL){ //if only 1 obj in list
-   cout<< tmp->Data();
-   cout<< "NULL"<< endl;
+   std::cout<< tmp->Data();
+   std::cout<< "NULL"<< std::endl;
  }
+
  else{
    //more than one object
-   do<< tmp->Data();
+   do{
+     std::cout << tmp->Data();
+     std::cout << "-->";
    tmp= tmp->Next();
  }
+
  while(tmp!=NULL);
- cout<<"NULL"<< endl
+ std::cout<<"NULL"<< std::endl;
 
    }
+}
 
 
-void List::Append(Node data){
+void List::Append(Lamp data){
 
   //make new node and set data
   Node* newNode= new Node();
